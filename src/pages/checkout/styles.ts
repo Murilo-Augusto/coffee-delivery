@@ -9,6 +9,7 @@ export const CheckoutContainer = styled.div`
   margin: 0 auto;
 
   h2 {
+    font-family: 'Baloo 2', sans-serif;
     font-size: 1.125rem;
     line-height: 130%;
     color: ${({ theme }) => theme.base.subtitle};
@@ -17,28 +18,86 @@ export const CheckoutContainer = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 28rem;
     gap: 2rem;
   }
 `
 
-export const CompleteOrder = styled.div`
-  order: 1;
+export const CompleteOrder = styled.div``
 
-  @media screen and (min-width: 768px) {
-    order: 0;
+export const Address = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2.5rem;
+  background: ${({ theme }) => theme.base.card};
+  border-radius: 6px;
+
+  .Top {
+    display: flex;
+    gap: 0.5rem;
+
+    svg {
+      color: ${({ theme }) => theme.product.yellow};
+    }
+
+    h3 {
+      line-height: 130%;
+      color: ${({ theme }) => theme.base.subtitle};
+    }
+
+    p {
+      font-size: 0.875rem;
+      line-height: 130%;
+      color: ${({ theme }) => theme.base.text};
+    }
+  }
+
+  .Inputs {
+    display: grid;
+    gap: 1rem;
+
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: 1fr 1fr 60px;
+
+      #Street {
+        grid-column: 1 / 4;
+      }
+
+      #Complement {
+        grid-column: 2 / 4;
+      }
+
+      #City {
+        grid-column: 2 / 3;
+      }
+
+      #State {
+        grid-column: 3 / 4;
+      }
+    }
   }
 `
 
-export const Address = styled.div``
+export const Input = styled.input`
+  color: ${({ theme }) => theme.base.text};
 
-export const SelectedCoffees = styled.aside`
-  order: 0;
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid ${({ theme }) => theme.base.button};
+  background: ${({ theme }) => theme.base.input};
 
-  @media screen and (min-width: 768px) {
-    order: 1;
+  &::placeholder {
+    color: ${({ theme }) => theme.base.label};
+  }
+
+  &:focus {
+    border: 1px solid ${({ theme }) => theme.product['yellow-dark']};
+    box-shadow: none;
   }
 `
+
+export const SelectedCoffees = styled.aside``
 
 export const ConfirmOrder = styled.div`
   display: flex;
@@ -79,8 +138,6 @@ export const OrderDetails = styled.div`
     color: ${({ theme }) => theme.base.subtitle};
   }
 `
-
-export const Input = styled.input``
 
 export const Divider = styled.div`
   height: 1px;

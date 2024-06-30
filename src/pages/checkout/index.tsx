@@ -2,7 +2,6 @@ import { MapPinLine } from '@phosphor-icons/react'
 import {
   Address,
   CheckoutContainer,
-  Input,
   CompleteOrder,
   SelectedCoffees,
   Divider,
@@ -11,6 +10,7 @@ import {
   OrderDetails,
 } from './styles'
 import { SelectedCoffee } from './components/selected-coffee'
+import { Input } from '../../components/input'
 
 export function Checkout() {
   return (
@@ -18,7 +18,7 @@ export function Checkout() {
       <CompleteOrder>
         <h2>Complete seu pedido</h2>
         <Address>
-          <div>
+          <div className="Top">
             <MapPinLine size={22} />
             <div>
               <h3>Endereço de Entrega</h3>
@@ -26,18 +26,18 @@ export function Checkout() {
             </div>
           </div>
 
-          <div>
-            <Input id="cep" placeholder="CEP" />
-            <Input id="street" placeholder="Rua" />
-            <Input id="number" placeholder="Número" />
-            <Input id="complement" placeholder="Complemento" />
-            <Input id="complement" placeholder="Complemento" />
-            <Input id="neighborhood" placeholder="Bairro" />
-            <Input id="city" placeholder="Cidade" />
-            <Input id="state" placeholder="UF" />
+          <div className="Inputs">
+            <Input id="Cep" placeholder="CEP" />
+            <Input id="Street" placeholder="Rua" />
+            <Input id="Number" placeholder="Número" />
+            <Input id="Complement" placeholder="Complemento" optional />
+            <Input id="Neighborhood" placeholder="Bairro" />
+            <Input id="City" placeholder="Cidade" />
+            <Input id="State" placeholder="UF" />
           </div>
         </Address>
       </CompleteOrder>
+
       <SelectedCoffees>
         <h2>Cafés selecionados</h2>
         <ConfirmOrder>
