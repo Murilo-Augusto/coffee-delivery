@@ -3,14 +3,19 @@ import {
   Address,
   CheckoutContainer,
   Input,
-  Order,
+  CompleteOrder,
   SelectedCoffees,
+  Divider,
+  ConfirmOrder,
+  ConfirmButton,
+  OrderDetails,
 } from './styles'
+import { SelectedCoffee } from './components/selected-coffee'
 
 export function Checkout() {
   return (
     <CheckoutContainer>
-      <Order>
+      <CompleteOrder>
         <h2>Complete seu pedido</h2>
         <Address>
           <div>
@@ -32,9 +37,30 @@ export function Checkout() {
             <Input id="state" placeholder="UF" />
           </div>
         </Address>
-      </Order>
+      </CompleteOrder>
       <SelectedCoffees>
         <h2>Cafés selecionados</h2>
+        <ConfirmOrder>
+          <SelectedCoffee />
+          <Divider />
+          <SelectedCoffee />
+          <Divider />
+          <OrderDetails>
+            <div>
+              <span className="PriceTitle">Total de itens</span>
+              <span className="Price">R$ 29,70</span>
+            </div>
+            <div>
+              <span className="PriceTitle">Entrega</span>
+              <span className="Price">R$ 3,50</span>
+            </div>
+            <div>
+              <span className="Total">Total</span>
+              <span className="Total">R$ 33,20</span>
+            </div>
+          </OrderDetails>
+          <ConfirmButton>CONFIRMAR PEDIDO</ConfirmButton>
+        </ConfirmOrder>
       </SelectedCoffees>
     </CheckoutContainer>
   )
