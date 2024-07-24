@@ -13,8 +13,6 @@ export const CheckoutContainer = styled.div`
     font-size: 1.125rem;
     line-height: 130%;
     color: ${({ theme }) => theme.base.subtitle};
-
-    margin-bottom: 1rem;
   }
 
   @media screen and (min-width: 768px) {
@@ -23,7 +21,11 @@ export const CheckoutContainer = styled.div`
   }
 `
 
-export const CompleteOrder = styled.div``
+export const CompleteOrder = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+`
 
 export const Address = styled.div`
   display: flex;
@@ -33,15 +35,18 @@ export const Address = styled.div`
   background: ${({ theme }) => theme.base.card};
   border-radius: 6px;
 
-  .Top {
+  .TopAddress {
     display: flex;
     gap: 0.5rem;
 
     svg {
       color: ${({ theme }) => theme.product.yellow};
+      flex-shrink: 0;
     }
 
     h3 {
+      font-size: 1rem;
+      font-weight: normal;
       line-height: 130%;
       color: ${({ theme }) => theme.base.subtitle};
     }
@@ -79,25 +84,48 @@ export const Address = styled.div`
   }
 `
 
-export const Input = styled.input`
-  color: ${({ theme }) => theme.base.text};
+export const Payment = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2.5rem;
+  background: ${({ theme }) => theme.base.card};
 
-  padding: 0.75rem;
-  border-radius: 4px;
-  border: 1px solid ${({ theme }) => theme.base.button};
-  background: ${({ theme }) => theme.base.input};
+  .TopPayment {
+    display: flex;
+    gap: 0.5rem;
 
-  &::placeholder {
-    color: ${({ theme }) => theme.base.label};
+    svg {
+      color: ${({ theme }) => theme.product.purple};
+      flex-shrink: 0;
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: normal;
+      line-height: 130%;
+      color: ${({ theme }) => theme.base.subtitle};
+    }
+
+    p {
+      font-size: 0.875rem;
+      line-height: 130%;
+      color: ${({ theme }) => theme.base.text};
+    }
   }
 
-  &:focus {
-    border: 1px solid ${({ theme }) => theme.product['yellow-dark']};
-    box-shadow: none;
+  .PaymentOptions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
   }
 `
 
-export const SelectedCoffees = styled.aside``
+export const SelectedCoffees = styled.aside`
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+`
 
 export const ConfirmOrder = styled.div`
   display: flex;
