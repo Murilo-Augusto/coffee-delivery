@@ -2,6 +2,7 @@ import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { Home } from './pages/home'
 import { Checkout } from './pages/checkout'
 import { DefaultLayout } from './pages/_layouts/default-layout'
+import { Success } from './pages/success'
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
       {
         path: '/checkout',
         element: <Checkout />,
+      },
+      {
+        path: '/success',
+        element: <Success />,
       },
       {
         path: '',
