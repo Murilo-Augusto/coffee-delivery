@@ -1,5 +1,9 @@
+import { useTheme } from 'styled-components'
 import { Coffee, Package, ShoppingCart, Timer } from '@phosphor-icons/react'
-import expressoTradicional from '../../assets/expresso.png'
+
+import coffeApresentation from '../../assets/coffee-apresentation.png'
+
+import { CoffeeCard } from '../../components/coffee-card'
 import {
   HomeApresentation,
   HomeContainer,
@@ -8,9 +12,7 @@ import {
   Filter,
   Tag,
 } from './styles'
-import coffeApresentation from '../../assets/coffee-apresentation.png'
-import { useTheme } from 'styled-components'
-import { CoffeeCard } from '../../components/coffee-card'
+import { coffees } from '../../constants/coffees'
 
 export function Home() {
   const theme = useTheme()
@@ -83,13 +85,18 @@ export function Home() {
           </Filter>
         </div>
         <List>
-          <CoffeeCard
-            name="Expresso Tradicional"
-            description="O tradicional café feito com água quente e grãos moídos"
-            price={9.5}
-            tags={['TRADICIONAL']}
-            coffeeImg={<img src={expressoTradicional} alt="" />}
-          />
+          {coffees.map((coffee) => (
+            <CoffeeCard
+              key={coffee.id}
+              {...coffee}
+              coffeeImg={
+                <img
+                  src={`../../../public/resources/coffees/${coffee.id}.png`}
+                  alt={coffee.name}
+                />
+              }
+            />
+          ))}
         </List>
       </CoffeeList>
     </HomeContainer>

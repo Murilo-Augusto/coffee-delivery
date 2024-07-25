@@ -160,7 +160,8 @@ export const Tag = styled.button`
 export const List = styled.ul`
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  row-gap: 2.5rem;
+  column-gap: 2rem;
 
   @media screen and (min-width: 640px) {
     grid-template-columns: repeat(2, 1fr);
