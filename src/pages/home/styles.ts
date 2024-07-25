@@ -136,7 +136,11 @@ export const Filter = styled.div`
   gap: 0.5rem;
 `
 
-export const Tag = styled.button`
+interface TagProps {
+  $isActive?: boolean
+}
+
+export const Tag = styled.button<TagProps>`
   all: unset;
 
   font-size: 0.625rem;
@@ -146,7 +150,10 @@ export const Tag = styled.button`
   padding: 0.375rem 0.75rem;
   border: 1px solid ${({ theme }) => theme.product.yellow};
   border-radius: 100px;
-  color: ${({ theme }) => theme.product['yellow-dark']};
+  color: ${({ theme, $isActive }) =>
+    $isActive ? theme.base.white : theme.product['yellow-dark']};
+  background: ${({ theme, $isActive }) =>
+    $isActive ? theme.product.yellow : 'trasparent'};
 
   cursor: pointer;
   transition: all 0.2s;
