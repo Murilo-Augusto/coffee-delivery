@@ -1,19 +1,19 @@
+import { useMemo, useState } from 'react'
 import { useTheme } from 'styled-components'
 import { Coffee, Package, ShoppingCart, Timer } from '@phosphor-icons/react'
 
-import coffeApresentation from '../../assets/coffee-apresentation.png'
+import { coffees } from '../../constants/coffees'
+import coffeePresentation from '../../assets/coffee-presentation.png'
 
 import { CoffeeCard } from '../../components/coffee-card'
 import {
-  HomeApresentation,
+  HomePresentation,
   HomeContainer,
   CoffeeList,
   List,
   Filter,
   Tag,
 } from './styles'
-import { coffees } from '../../constants/coffees'
-import { useMemo, useState } from 'react'
 
 export function Home() {
   const [tag, setTag] = useState('')
@@ -27,7 +27,7 @@ export function Home() {
 
   return (
     <HomeContainer>
-      <HomeApresentation>
+      <HomePresentation>
         <div className="Infos">
           <div className="Titles">
             <h1>Encontre o café perfeito para qualquer hora do dia</h1>
@@ -79,9 +79,9 @@ export function Home() {
             </div>
           </div>
         </div>
-        <img src={coffeApresentation} alt="" />
+        <img src={coffeePresentation} alt="" />
         <div className="BackgroundImage"></div>
-      </HomeApresentation>
+      </HomePresentation>
       <CoffeeList>
         <div className="CoffeeListHeader">
           <h2>Nossos cafés</h2>
@@ -156,7 +156,7 @@ export function Home() {
                 {...coffee}
                 coffeeImg={
                   <img
-                    src={`../../../public/resources/coffees/${coffee.id}.png`}
+                    src={`../../../resources/coffees/${coffee.id}.png`}
                     alt={coffee.name}
                   />
                 }

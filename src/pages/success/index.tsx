@@ -10,8 +10,38 @@ import {
   SuccessTitle,
   TypeOfPayment,
 } from './styles'
+import { useCallback, useContext, useEffect, useState } from 'react'
+import { CartContext } from '../../contexts/cart-context'
+import { PaymentOptions } from '../../constants/payment-options'
 
 export function Success() {
+  const { cart } = useContext(CartContext)
+  const [paymentOption, setPaymentOption] = useState('')
+
+  const translatePaymentOption = useCallback(
+    (paymentOption: PaymentOptions) => {
+      if (!paymentOption) return
+      switch (paymentOption) {
+        case 'credit_card':
+          setPaymentOption('Cartão de Crédito')
+          break
+
+        case 'debit_card':
+          setPaymentOption('Cartão de Débito')
+          break
+
+        case 'money':
+          setPaymentOption('Dinheiro')
+          break
+      }
+    },
+    [],
+  )
+
+  useEffect(() => {
+    translatePaymentOption(cart.paymentType)
+  }, [cart.paymentType, translatePaymentOption])
+
   return (
     <SuccessContainer>
       <div>
@@ -23,20 +53,27 @@ export function Success() {
           <Address>
             <MapPin weight="fill" />
             <p>
-              Entrega em <strong>Rua João Daniel Martinelli, 102</strong>{' '}
-              Farrapos - Porto Alegre, RS
+              Entrega em{' '}
+              <strong>
+                {cart.address.street}, {cart.address.number}
+              </strong>
+              <br />
+              {cart.address.neighborhood} - {cart.address.city},{' '}
+              {cart.address.state}
             </p>
           </Address>
           <DeliveryForecast>
             <Timer weight="fill" />
             <p>
-              Previsão de entrega <strong>20 min - 30 min</strong>
+              Previsão de entrega <br />
+              <strong>20 min - 30 min</strong>
             </p>
           </DeliveryForecast>
           <TypeOfPayment>
             <CurrencyDollar weight="bold" />
             <p>
-              Previsão de entrega <strong>20 min - 30 min</strong>
+              Pagamento na entrega <br />
+              <strong>{paymentOption}</strong>
             </p>
           </TypeOfPayment>
         </OrderInfo>

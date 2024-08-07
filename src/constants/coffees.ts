@@ -51,7 +51,7 @@ export const coffees = [
     tags: ['TRADICIONAL', 'COM LEITE'],
   },
   {
-    id: 'Macchiato',
+    id: 'macchiato',
     name: 'Macchiato',
     description:
       'Café expresso misturado com um pouco de leite quente e espuma',

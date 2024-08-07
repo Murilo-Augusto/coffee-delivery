@@ -6,7 +6,7 @@ export const HomeContainer = styled.div`
   flex-direction: column;
 `
 
-export const HomeApresentation = styled.section`
+export const HomePresentation = styled.section`
   display: flex;
   justify-content: space-between;
   gap: 2rem;
@@ -145,7 +145,6 @@ export const Tag = styled.button<TagProps>`
 
   font-size: 0.625rem;
   font-weight: bold;
-  line-height: 130%;
 
   padding: 0.375rem 0.75rem;
   border: 1px solid ${({ theme }) => theme.product.yellow};
@@ -153,7 +152,7 @@ export const Tag = styled.button<TagProps>`
   color: ${({ theme, $isActive }) =>
     $isActive ? theme.base.white : theme.product['yellow-dark']};
   background: ${({ theme, $isActive }) =>
-    $isActive ? theme.product.yellow : 'trasparent'};
+    $isActive ? theme.product.yellow : 'transparent'};
 
   cursor: pointer;
   transition: all 0.2s;

@@ -1,6 +1,7 @@
-import { ShoppingCart } from '@phosphor-icons/react'
-import { CartContainer } from './styles'
 import { ComponentProps } from 'react'
+import { ShoppingCart } from '@phosphor-icons/react'
+
+import { CartContainer, Quantity } from './styles'
 
 type CartButtonVariant = 'default' | 'highlight'
 
@@ -19,7 +20,7 @@ export function CartButton({
   return (
     <CartContainer $variant={$variant} {...rest}>
       <ShoppingCart size={22} weight="fill" />
-      {quantity && isToCart && <span>{quantity}</span>}
+      {!!quantity && isToCart && <Quantity>{quantity}</Quantity>}
     </CartContainer>
   )
 }

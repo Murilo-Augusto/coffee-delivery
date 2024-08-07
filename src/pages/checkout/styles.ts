@@ -65,19 +65,19 @@ export const Address = styled.div`
     @media screen and (min-width: 1024px) {
       grid-template-columns: 1fr 1fr 60px;
 
-      #Street {
+      #street {
         grid-column: 1 / 4;
       }
 
-      #Complement {
+      #complement {
         grid-column: 2 / 4;
       }
 
-      #City {
+      #city {
         grid-column: 2 / 3;
       }
 
-      #State {
+      #state {
         grid-column: 3 / 4;
       }
     }
