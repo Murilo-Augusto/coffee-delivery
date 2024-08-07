@@ -156,7 +156,7 @@ export function Home() {
                 {...coffee}
                 coffeeImg={
                   <img
-                    src={`../../../resources/coffees/${coffee.id}.png`}
+                    src={`coffee-delivery/../../../resources/coffees/${coffee.id}.png`}
                     alt={coffee.name}
                   />
                 }

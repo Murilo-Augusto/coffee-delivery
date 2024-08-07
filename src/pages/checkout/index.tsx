@@ -80,7 +80,7 @@ export function Checkout() {
       complement: data.complement,
     })
     resetCart()
-    navigate('/success')
+    navigate('/coffee-delivery/success')
   }
 
   return (
@@ -176,7 +176,7 @@ export function Checkout() {
                 quantity={coffee.coffeeQuantity}
                 coffeeImg={
                   <img
-                    src={`../../../resources/coffees/${coffee.id}.png`}
+                    src={`coffee-delivery/../../../resources/coffees/${coffee.id}.png`}
                     alt={coffee.coffeeName}
                   />
                 }

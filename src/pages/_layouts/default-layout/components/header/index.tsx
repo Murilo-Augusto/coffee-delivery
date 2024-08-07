@@ -20,7 +20,7 @@ export function Header() {
 
   return (
     <HeaderContainer>
-      <Link to="/">
+      <Link to="/coffee-delivery">
         <img className="logo" src={logo} alt="Logotipo Coffee Delivery" />
       </Link>
       <div>
@@ -29,7 +29,7 @@ export function Header() {
         )}
         <CartButton
           isToCart
-          onClick={() => navigate('/checkout')}
+          onClick={() => navigate('/coffee-delivery/checkout')}
           title="Ir para o carrinho"
           quantity={coffeeAmount}
           disabled={cart.coffees.length <= 0}
