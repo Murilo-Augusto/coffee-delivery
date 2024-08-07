@@ -176,7 +176,7 @@ export function Checkout() {
                 quantity={coffee.coffeeQuantity}
                 coffeeImg={
                   <img
-                    src={`coffee-delivery/../../../resources/coffees/${coffee.id}.png`}
+                    src={`coffee-delivery/resources/coffees/${coffee.id}.png`}
                     alt={coffee.coffeeName}
                   />
                 }
