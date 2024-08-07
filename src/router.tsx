@@ -6,11 +6,11 @@ import { Success } from './pages/success'
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/coffee-delivery',
     element: <DefaultLayout />,
     children: [
       {
-        path: '/',
+        path: '/coffee-delivery',
         element: <Home />,
       },
       {
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
       },
       {
         path: '',
-        element: <Navigate replace to="/" />,
+        element: <Navigate replace to="/coffee-delivery" />,
       },
     ],
   },
